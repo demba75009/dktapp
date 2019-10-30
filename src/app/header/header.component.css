@@ -1,0 +1,14 @@
+.fa-user-times :hover{
+
+    color:red;
+
+
+}
+
+.fa-user-plus span  {
+    visibility: hidden;
+}
+
+.fa-user-plus i:hover + span {
+    visibility: visible;
+}
