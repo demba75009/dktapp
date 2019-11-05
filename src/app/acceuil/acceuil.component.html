@@ -3,23 +3,25 @@
 
 
 <h1> hello ! bienvenue sur mon site !</h1>
+   <table class="table table-bordered table-striped">
 
 <section routerLinkActive="active" *ngIf="!isAuth">
 
   <div class="text-center">
 
-  <a routerLink="auth/signup"> Crée un compte</a>
+  <a routerLink="../auth/signup"> Crée un compte</a>
 
 </div>
 </section>
 
+</table>
 
 <section routerLinkActive="active" *ngIf="!isAuth">
 
+   <table class="table table-bordered table-striped">
 
 <div class="text-center">
-
-    <a routerLink="auth/signin">se connecter</a>
-
+    <a routerLink="../auth/signin">se connecter</a>
 </div>
+</table>
 </section>
