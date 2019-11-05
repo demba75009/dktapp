@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar bg-info">
   <div class="container-fluid">
 
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -11,10 +11,15 @@
         <a routerLink="books"> <i class="fas fa-camera-retro"></i></a>
       </li>
       <li routerLinkActive="active" *ngIf="!isAuth">
-        <a routerLink="auth/signup"><i class="fas fa-user-plus"> <span>Ton texte</span>
-        </i></a>
 
+
+          <a routerLink="auth/signup"><i class="fas fa-user-plus ">
+        </i></a>
       </li>
+
+
+
+
 
 
       <ul class="nav navbar-nav navbar-right">

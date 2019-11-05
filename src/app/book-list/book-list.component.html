@@ -1,5 +1,7 @@
+<div class="container">
+
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-lg-6">
 
     <div class="list-group">
       <button
@@ -8,12 +10,17 @@
               (click)="onViewBook(i)">
         <h3 class="list-group-item-heading">
             <img style="max-width:400px;" *ngIf="book.photo" [src]="book.photo">
-{{book.synopsis}}
-          <button class="btn btn-default pull-right"  (click)="onDeleteBook(book)">
-X          </button>
+          <button class="btn bg-danger pull-right"  (click)="onDeleteBook(book)">
+           X
+          </button>
         </h3>
+
+
+          {{book.synopsis}}
+
       </button>
     </div>
     <button class="btn btn-primary" (click)="onNewBook()">Nouveaux post</button>
   </div>
+</div>
 </div>

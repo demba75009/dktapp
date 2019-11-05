@@ -5,6 +5,8 @@ import { Routes,RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -18,12 +20,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
     { path: 'auth/signup', component: SignupComponent },
+    { path: 'acceuil', component: AcceuilComponent },
+
     { path: 'auth/signin', component: SigninComponent },
     { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
     { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
     { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
-    { path: '', redirectTo: 'books', pathMatch: 'full' },
-    { path: '**', redirectTo: 'books' }
+    { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
+    { path: '**', redirectTo: 'acceuil' }
 ];
 
 @NgModule({
@@ -34,7 +38,8 @@ const appRoutes: Routes = [
     BookListComponent,
     SingleBookComponent,
     BookFormComponent,
-    HeaderComponent
+    HeaderComponent,
+      AcceuilComponent
   ],
   imports: [
       BrowserModule,
