@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { BooksService } from './services/books.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
     { path: 'auth/signup', component: SignupComponent },
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     SingleBookComponent,
     BookFormComponent,
     HeaderComponent,
-      AcceuilComponent
+      AcceuilComponent,
+      SearchComponent
   ],
   imports: [
       BrowserModule,

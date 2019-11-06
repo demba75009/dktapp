@@ -1,7 +1,7 @@
 //ce service va permette la recuperation, l'ajout ,la modification et la supression des livres
 import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject,Observable,of } from 'rxjs';
 import { Book } from '../models/book.model';
 @Injectable()
 export class BooksService {
@@ -13,6 +13,19 @@ export class BooksService {
 
     books: Book[] = [];
 
+    searchBooks(term: string): Observable<Book[]> {
+        if (!term.trim()) {
+          // if not search term, return empty hero array.
+          return of([]);
+        }
+        firebase.database().ref('/books')
+            .on('value', (data: DataSnapshot) => {
+                    this.books = data.val() ? data.val() : [];
+                    this.emitBooks();
+                }
+            );
+        
+    }
     //on crée un subject qui va permettre l ajout d'un nouveau livre
     booksSubject = new Subject<Book[]>();
 
