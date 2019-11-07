@@ -3,13 +3,13 @@
 
 
 <h1> hello ! bienvenue sur mon site !</h1>
-   <table class="table table-bordered table-striped">
+   <table class="table  table-striped">
 
 <section routerLinkActive="active" *ngIf="!isAuth">
 
   <div class="text-center">
 
-  <a routerLink="../auth/signup"> Crée un compte</a>
+  <button class="btn btn-info" type="submit"><a routerLink="../auth/signup"> Crée un compte</a> </button>
 
 </div>
 </section>
@@ -18,10 +18,8 @@
 
 <section routerLinkActive="active" *ngIf="!isAuth">
 
-   <table class="table table-bordered table-striped">
 
 <div class="text-center">
-    <a routerLink="../auth/signin">se connecter</a>
+  <button class="btn btn-success" type="submit">   <a routerLink="../auth/signin">se connecter</a> </button>
 </div>
-</table>
 </section>

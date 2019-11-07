@@ -3,11 +3,13 @@ import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
 import { Subject,Observable,of } from 'rxjs';
 import { Book } from '../models/book.model';
+import { HttpClient, HttpHeaders, } from '@angular/common/http'
+
 @Injectable()
 export class BooksService {
 
 
-    constructor() {
+    constructor(private http: HttpClient) {
         this.getBooks();
     }
 
@@ -18,12 +20,7 @@ export class BooksService {
           // if not search term, return empty hero array.
           return of([]);
         }
-        firebase.database().ref('/books')
-            .on('value', (data: DataSnapshot) => {
-                    this.books = data.val() ? data.val() : [];
-                    this.emitBooks();
-                }
-            );
+       return this.getBooks();
         
     }
     //on crée un subject qui va permettre l ajout d'un nouveau livre
@@ -40,7 +37,7 @@ export class BooksService {
     }
 
     //on recuperer les livre de la bdd
-    getBooks() {
+    getBooks()  {
         firebase.database().ref('/books')
             .on('value', (data: DataSnapshot) => {
                     this.books = data.val() ? data.val() : [];

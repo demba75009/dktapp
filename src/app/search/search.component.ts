@@ -12,10 +12,10 @@ import {
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  book$: Observable<Book[]>;
+  books$: Observable<Book[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private booksService: BooksService,) { }
+  constructor(private booksService: BooksService) { }
 
 // Push a search term into the observable stream.
 search(term: string): void {
@@ -23,7 +23,7 @@ search(term: string): void {
 }
   ngOnInit() {
 
-this.book$ = this.searchTerms.pipe(
+this.books$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
