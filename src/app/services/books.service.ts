@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 import { Subject,Observable,of } from 'rxjs';
 import { Book } from '../models/book.model';
 import { HttpClient, HttpHeaders, } from '@angular/common/http'
+import Datasnapshot = firebase.database.DataSnapshot;
+
 
 @Injectable()
 export class BooksService {
