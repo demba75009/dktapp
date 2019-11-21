@@ -1,13 +1,13 @@
-<div id="search-component">
-  <h4><label for="search-box">search</label></h4>
+<div id="search-component col-md-8 col-md-offset-2">
 
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-  <ul class="search-result">
-    <li *ngFor="let book of books$ | async" >
-      <a routerLink="/book-list/single-book/{{books.title}}">
-        {{books.title}}
-      </a>
-    </li>
-  </ul>
+      <div class="row">
+      <form class="form-horizontal col-md-8 col-md-offset-2" role="form" ng-controller="HeaderCtrl">
+          <div class="input-group">
+              <input ng-model="query" type="text" class="form-control" placeholder="rechercher ">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default glyphicon glyphicon-search" type="button" ng-click="searchAction()"></button>
+          </span>
+          </div>
+      </form>
+  </div>
 </div>

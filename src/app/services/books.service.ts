@@ -15,14 +15,7 @@ export class BooksService {
 
     books: Book[] = [];
 
-    searchBooks(term: string): Observable<Book[]> {
-        if (!term.trim()) {
-          // if not search term, return empty hero array.
-          return of([]);
-        }
-       return this.getBooks();
-        
-    }
+   
     //on crée un subject qui va permettre l ajout d'un nouveau livre
     booksSubject = new Subject<Book[]>();
 

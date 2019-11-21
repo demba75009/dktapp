@@ -1,25 +1,18 @@
 
 
 
+<div class="jumbotron">
 
-<h1> hello ! bienvenue sur mon site !</h1>
-   <table class="table  table-striped">
-
+<h1> Hello ! bienvenue sur mon site !</h1>
+</div>
 <section routerLinkActive="active" *ngIf="!isAuth">
 
-  <div class="text-center">
+<ul class="pager col-lg-9  col-xs-10 col-md-10">
 
-  <button class="btn btn-info" type="submit"><a routerLink="../auth/signup"> Crée un compte</a> </button>
-
-</div>
-</section>
-
-</table>
-
-<section routerLinkActive="active" *ngIf="!isAuth">
+ <li> <button class="btn btn-warning" type="submit"><a routerLink="../auth/signup"> Crée un compte</a> </button></li>
 
 
-<div class="text-center">
-  <button class="btn btn-success" type="submit">   <a routerLink="../auth/signin">se connecter</a> </button>
-</div>
+ <li> <button class="btn btn-info " type="submit">   <a routerLink="../auth/signin">se connecter</a> </button></li>
+</ul>
+
 </section>

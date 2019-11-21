@@ -41,4 +41,7 @@ export class SigninComponent implements OnInit {
             }
         );
     }
+    onBack() {
+        this.router.navigate(['/acceuil']);
+    }
 }

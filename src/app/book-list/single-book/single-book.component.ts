@@ -29,5 +29,6 @@ export class SingleBookComponent implements OnInit {
         this.router.navigate(['/books']);
     }
 
+    
 
 }

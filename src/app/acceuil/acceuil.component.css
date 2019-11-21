@@ -4,6 +4,14 @@ h1{
 
 }
 
+.jumbotron {
+  color: white; 
+  background-color: #9bb 
+}
+.jumbotron:hover {
+  background-color: red; 
+}
+
 . navbar{
     padding:16px;
     font: 20px Arial;
@@ -16,9 +24,26 @@ h1{
     text-decoration:none;
 
 }
-. navbar:hover
+.btn-info:hover
 {
 
     border:none;
-    background-color:red;
+    background-color:green;
+}
+
+.btn-warning:hover
+{
+
+    border:none;
+    background-color:blue;
+}
+
+[class*="col"] {
+
+padding-top: 150px;
+}
+
+.btn-info
+{
+float : right;
 }
